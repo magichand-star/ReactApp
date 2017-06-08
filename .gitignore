@@ -1,0 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+bulletinapp/node_modules
+
+# testing
+bulletinapp/coverage
+
+# production
+bulletinapp/build
+
+# misc
+bulletinapp/.DS_Store
+bulletinapp/.env.local
+bulletinapp/.env.development.local
+bulletinapp/.env.test.local
+bulletinapp/.env.production.local
+
+bulletinapp/npm-debug.log*
+bulletinapp/yarn-debug.log*
+bulletinapp/yarn-error.log*
