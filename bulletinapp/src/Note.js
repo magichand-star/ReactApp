@@ -5,7 +5,6 @@ class Note extends Component{
 	constructor() {
 		super();
 		this.state = {editing : false};
-		//alert(this.state.editing);
 	}
     // method to edit the note
 	edit(){
@@ -13,15 +12,41 @@ class Note extends Component{
 		this.setState({editing :  true});
 		alert("editing");
 	}
+    
+    //called before the render method
+     componentWillMount() {
+         this.style = {
+                right: this.randomBetween(0, window.innerWidth - 150, 'px'),
+                top: this.randomBetween(0, window.innerHeight -150, 'px')
+         }
+     }
+    
+    //method will be invoked to update the text in the dom
+    componentDidUpdate() {
+     if (this.state.editing) {
+                    this.refs.newText.focus()
+                    this.refs.newText.select()
+          }
+      }
+
+
+     shouldComponentUpdate(nextProps, nextState) {
+                return this.props.children !== nextProps.children || this.state !== nextState
+       }
+     
+     //generate random number to position the note
+     randomBetween(x, y, s) {
+                return (x + Math.ceil(Math.random() * (y-x))) + s
+     }
 
 	save(){
-		alert("save");
+		//alert("save");
 		this.setState({editing: false});
 	}
 
 	remove(){
 		this.setState = ({ editing: true});
-		alert("remove");
+		//alert("remove");
 	}
 
 	renderForm(){
