@@ -2,12 +2,15 @@
 
 # dependencies
 bulletinapp/node_modules
+react-redux-app/node_modules
 
 # testing
 bulletinapp/coverage
+react-redux-app/coverage
 
 # production
 bulletinapp/build
+react-redux-app/build
 
 # misc
 bulletinapp/.DS_Store
