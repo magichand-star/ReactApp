@@ -8,4 +8,5 @@ export default function(state = INITIAL_STATE, action){
     
     console.log("reducer");
     console.log(action);
-}
+    return state;
+}	

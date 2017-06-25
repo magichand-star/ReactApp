@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import render from 'react-dom';
 
+import { connect } from 'react-redux';
+
 class MovieApp extends Component{
 
 	
 	render(){
+
 		return (
             
-            <h1>Hello World</h1>
+            <div></div>
 
 			)
 	}
 }
 
-export default MovieApp;
+const mapStateToProps = function(state){
+	console.log("component");
+	console.log(state);
+    return{
+    	movies : state.moviesList
+    }
+}
+
+export default connect(mapStateToProps)(MovieApp);
