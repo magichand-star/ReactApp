@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import render from 'react-dom';
 
+import './Movie.css';
+
 class MovieCard extends Component{
   
   render(){

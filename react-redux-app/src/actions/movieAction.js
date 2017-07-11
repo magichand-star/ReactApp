@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_MOVIES, GET_MOVIES_FULFILLED, GET_MOVIES_REJECTED } from '../constants/ActionTypes';
+import { GET_MOVIES, GET_MOVIES_SUCCESS, GET_MOVIES_FULFILLED, GET_MOVIES_REJECTED } from '../constants/ActionTypes';
 
 // To get all the movies
 export function getMovies(){
@@ -20,7 +20,7 @@ export function getMoviesSuccess(movies) {
   console.log("success");
   console.log(movies);
   return {
-    type: GET_MOVIES_FULFILLED,
+    type: GET_MOVIES_SUCCESS,
     payload: movies
   };
 }

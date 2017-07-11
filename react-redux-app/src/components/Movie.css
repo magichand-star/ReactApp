@@ -1,0 +1,30 @@
+.movies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 18px;
+}
+.movies .movie {
+  padding: 10px;
+  cursor: pointer;
+}
+.movies .movie .poster {
+  width: 100%;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
+.movies .movie .poster.active {
+  opacity: 0;
+}
+.movies .movie .title {
+  color: #525661;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+.movies .movie .info {
+  font-size: 11px;
+  opacity: .8;
+}
+.movies .movie .desc {
+  display: none;
+}

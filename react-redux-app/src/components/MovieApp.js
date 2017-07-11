@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { getMovies, getMoviesSuccess, getMoviesFailure } from '../actions/movieAction';
 
 import MovieCard from './MovieCard';
+import './Movie.css';
+
 
 class MovieApp extends Component {
 
 
     componentWillMount() {
-        console.log("component");
-        console.log(this.props);
         this.props.getMovies();
     }
 
@@ -22,12 +22,14 @@ class MovieApp extends Component {
            
      <div className="container">
         <h1>Posts</h1>
-        <ul className="list-group">
-         { this.props.movieList.map(function(singleMovie){
+        <section className="movies">
+          
+         { this.props.movieList.map(singleMovie => (
+
              <MovieCard movie={singleMovie} />
-         }) 
+         )) 
        }
-        </ul>
+        </section>
       </div>
             
 
@@ -37,11 +39,14 @@ class MovieApp extends Component {
 
 
 const mapStateToProps = (state) => {
-  alert("container");
-  console.log("container");
-  console.log(state); 
+  
+  if(state.movies.moviesList.movies.length > 0){
   return { 
-    movieList: state.movies.moviesList.movies.data.result
+    movieList: state.movies.moviesList.movies
+  }}else{
+     return { 
+    movieList: []
+  }
   };
 }
 
@@ -52,7 +57,7 @@ const mapDispatchToProps = (dispatch) => {
     getMovies: () => {
       dispatch(getMovies()).then((response) => {
            console.log(response);
-            !response.error ? dispatch(getMoviesSuccess(response.payload)) : dispatch(getMoviesFailure(response.payload));
+            !response.error ? dispatch(getMoviesSuccess(response.value)) : dispatch(getMoviesFailure(response.payload));
           });
     }
   }
