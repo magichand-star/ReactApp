@@ -4,17 +4,20 @@ import render from 'react-dom';
 class MovieCard extends Component{
   
   render(){
+
+    const movie = this.props.movie;
+
   	return (
          
      <div className="movie">
-      <img src="" alt="" className="poster" />
-      <div className="title"></div>
+      <img src={"https://image.tmdb.org/t/p/w500/"+movie.poster_path } className="poster" />
+      <div className="title">{movie.title}</div>
       <div className="info">
         <span className="length">117 min</span>
-        <span className="year">2015</span>
+        <span className="year">{movie.release_date}</span>
       </div>
       <div className="desc">
-        Jack is a young boy of 5 years old who has lived all his life in one room. He believes everything within it are the only real things in the world. But what will happen when his Ma suddenly tells him that there are other things outside of Room?
+        {movie.overview}
       </div>
     </div>
     

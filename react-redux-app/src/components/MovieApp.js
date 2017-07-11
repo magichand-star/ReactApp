@@ -3,6 +3,7 @@ import render from 'react-dom';
 import { connect } from 'react-redux';
 import { getMovies, getMoviesSuccess, getMoviesFailure } from '../actions/movieAction';
 
+import MovieCard from './MovieCard';
 
 class MovieApp extends Component {
 
@@ -14,15 +15,18 @@ class MovieApp extends Component {
     }
 
     render() {
-         console.log("render");
-         console.log(this.props);
-         const { movies, loading, error } = this.props.movieList;
-        return (
+    console.log("render");
+    console.log(this.props);
+    //const { movies, loading, error } = this.props.movieList;
+    return (
            
      <div className="container">
         <h1>Posts</h1>
         <ul className="list-group">
-          {movies}
+         { this.props.movieList.map(function(singleMovie){
+             <MovieCard movie={singleMovie} />
+         }) 
+       }
         </ul>
       </div>
             
@@ -37,7 +41,7 @@ const mapStateToProps = (state) => {
   console.log("container");
   console.log(state); 
   return { 
-    movieList: state.movies.moviesList
+    movieList: state.movies.moviesList.movies.data.result
   };
 }
 
