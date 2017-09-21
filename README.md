@@ -5,4 +5,8 @@ Built using React JS
 # React Django App
 Built boilerplate to include React js inside Django application.
 
-![Bulletin Board](https://github.com/ajay2507/ReactApp/blob/master/bulletinapp/BulletinBoard.png)
+# React-redux 
+Set up react redux application
+
+# React-component-lifecycle
+describing react component life cycle
